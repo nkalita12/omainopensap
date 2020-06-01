@@ -1,0 +1,34 @@
+<mvc:View controllerName="tma.testMobileApp.controller.App" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<Button enabled="true" id="scanId" press="onPressScan" text="Scan" icon="sap-icon://bar-code"/>
+						<Table id="idProductsTable" inset="false" items="{ path: '/MyView' }">
+							<columns>
+								<Column width="12em">
+									<Text text="ID"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="Text"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<ObjectIdentifier title="{ID}" />
+										<Text text="{Text}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+						<Button enabled="true" id="refresh" press="onRefresh" text="Refresh" />
+						<Button enabled="true" id="flush" press="onFlush" text="Flush" />
+					
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
